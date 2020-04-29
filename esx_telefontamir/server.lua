@@ -10,7 +10,8 @@ ESX.RegisterUsableItem('telefontamirtornavida', function(source)
 	Wait(7500)
 	local xPlayer = ESX.GetPlayerFromId(source)
 	local telefontamirtornavida = xPlayer.getInventoryItem('telefontamirtornavida').count
-	
+	local phoneitem = xPlayer.getInventoryItem('phone')
+	if phoneitem.count >= 1 then
 		if telefontamirtornavida == 1 then
 			xPlayer.removeInventoryItem('telefontamirtornavida', 1)
 			Wait(1000)
@@ -18,6 +19,7 @@ ESX.RegisterUsableItem('telefontamirtornavida', function(source)
 			Wait(1000)
 			xPlayer.addInventoryItem('phone', 1)
 		end
+	end
 end)
 
 -- CREATED BY OPH3Z#9999 --
