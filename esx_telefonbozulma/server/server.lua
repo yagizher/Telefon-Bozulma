@@ -10,7 +10,6 @@ AddEventHandler("esx_telefonbozulma:nakitpara", function()
      if nakitpara > 0 then
      xPlayer.removeMoney(nakitpara)
 	 TriggerClientEvent('mythic_notify:client:SendAlert', source, { type = 'error', text = 'Suya Girdiğin İçin Üzerindeki Bütün Paralar ıslandı. Artık kullanamazsın.',  length = 3000})
-
     end
 end)
 
@@ -22,19 +21,16 @@ AddEventHandler("esx_telefonbozulma:karapara", function()
      if karapara > 0 then
      xPlayer.removeAccountMoney('black_money', karapara)
 	 TriggerClientEvent('mythic_notify:client:SendAlert', source, { type = 'error', text = 'Suya Girdiğin İçin Üzerindeki Bütün Kara Paralar ıslandı. Artık kullanamazsın.',  length = 3000})
-
     end
 end)
 
 RegisterServerEvent("esx_telefonbozulma:telefon")
 AddEventHandler("esx_telefonbozulma:telefon", function()
     local xPlayer = ESX.GetPlayerFromId(source)
-
     local telefon = xPlayer.getInventoryItem("phone")["count"]
      if telefon > 0 then
      xPlayer.removeInventoryItem("phone", telefon)
      xPlayer.addInventoryItem('kiriktelefon', 1)
 	 TriggerClientEvent('mythic_notify:client:SendAlert', source, { type = 'error', text = 'Suya Girdiğin İçin Telefonun Bozuldu.',  length = 3000})
-
     end
 end)
